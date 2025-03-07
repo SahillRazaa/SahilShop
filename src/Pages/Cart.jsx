@@ -1096,7 +1096,7 @@ const Cart = () => {
       try {
         const userId = user.currentUser._id;
         const token = user.currentUser.accessToken;
-        const response = await axios.get(`http://localhost:8000/api/carts/findCart?user=${userId}`, {
+        const response = await axios.get(`https://sahilshop-backend.onrender.com/api/carts/findCart?user=${userId}`, {
           headers: {
             token: `Bearer ${token}`,
           },
