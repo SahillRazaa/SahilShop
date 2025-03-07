@@ -182,7 +182,7 @@ const BestDeal = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/products');
+        const res = await axios.get('https://sahilshop-backend.onrender.com/api/products');
         setProducts(res.data);
       } catch (err) {
         console.log(err);

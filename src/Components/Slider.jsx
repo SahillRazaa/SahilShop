@@ -204,7 +204,7 @@ const Slider = () => {
     useEffect(() => {
       const getProducts = async ()=>{
         try{
-            const res = await axios.get("http://localhost:8000/api/products/");
+            const res = await axios.get("https://sahilshop-backend.onrender.com/api/products/");
             setProducts(res.data);
             console.log(res.data);
         }catch(err)

@@ -209,7 +209,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/orders/findOrder', {
+        const res = await axios.get('https://sahilshop-backend.onrender.com/api/orders/findOrder', {
           headers: { token: 'Bearer ' + user.currentUser.accessToken },
           params: { user: user.currentUser._id },
         });

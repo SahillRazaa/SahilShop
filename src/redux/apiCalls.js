@@ -4,8 +4,7 @@ import { RegisterFailure, RegisterStart, RegisterSuccess, loginFailure, loginSta
 const login = async(dispatch,user)=>{
     dispatch(loginStart());
     try{
-        
-        const res = await axios.post("http://localhost:8000/api/auth/login",user);
+        const res = await axios.post("https://sahilshop-backend.onrender.com/api/auth/login",user);
         
         dispatch(loginSuccess(res.data));
     }catch(err)
@@ -16,7 +15,7 @@ const login = async(dispatch,user)=>{
 const register = async(dispatch,user)=>{
     dispatch(RegisterStart());
     try{
-        const res = await axios.post("http://localhost:8000/api/auth/register",user);
+        const res = await axios.post("https://sahilshop-backend.onrender.com/api/auth/register",user);
         dispatch(RegisterSuccess(res.data));
     }catch(err)
     {

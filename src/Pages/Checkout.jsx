@@ -354,7 +354,7 @@ const Checkout = () => {
 
   const handleCartRemove = async (userID, Token) => {
     try {
-      await axios.delete(`http://localhost:8000/api/carts/deleteCart/${userID}`, {
+      await axios.delete(`https://sahilshop-backend.onrender.com/api/carts/deleteCart/${userID}`, {
         headers: {
           token: `Bearer ${Token}`,
         },
@@ -366,7 +366,7 @@ const Checkout = () => {
 
   const createOrder = async (userID, Products, total, quantity, address, city, state, pincode, Token) => {
     try {
-      await axios.post("http://localhost:8000/api/orders/create", {
+      await axios.post("https://sahilshop-backend.onrender.com/api/orders/create", {
         user: userID,
         product: Products,
         total: total,

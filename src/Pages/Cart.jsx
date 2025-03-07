@@ -1124,7 +1124,7 @@ const Cart = () => {
       const newCartData = cartData.Products.filter((p) => p._id !== product._id);
       const newTotal = newCartData.reduce((sum, p) => sum + p.price * p.quantity, 0);
       const newQuantity = cartData.quantity - product.quantity;
-      await axios.put('http://localhost:8000/api/carts/update/' + user.currentUser._id, {
+      await axios.put('https://sahilshop-backend.onrender.com/api/carts/update/' + user.currentUser._id, {
       Products: newCartData,
       total: newTotal,
       quantity: newQuantity,

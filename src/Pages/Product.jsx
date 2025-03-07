@@ -219,7 +219,7 @@ const Product = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/products/find/' + id);
+        const res = await axios.get('https://sahilshop-backend.onrender.com/api/products/find/' + id);
         setProduct(res.data);
         setMainImage(res.data.image[0]);
       } catch (err) {
@@ -240,7 +240,7 @@ const Product = () => {
   const createCart = async () => {
     try {
       const exist = await axios.get(
-        'http://localhost:8000/api/carts/findCart?user=' + user.currentUser._id,
+        'https://sahilshop-backend.onrender.com/api/carts/findCart?user=' + user.currentUser._id,
         {
           headers: {
             token: `Bearer ${user.currentUser.accessToken}`,
@@ -250,7 +250,7 @@ const Product = () => {
   
       if (exist.data.length === 0) {
         await axios.post(
-          'http://localhost:8000/api/carts/create',
+          'https://sahilshop-backend.onrender.com/api/carts/create',
           {
             user: user.currentUser._id,
             product: { ...product, quantity, color },
@@ -271,7 +271,7 @@ const Product = () => {
         const updatedQuantity = cart.quantity + quantity;
   
         await axios.put(
-          'http://localhost:8000/api/carts/update/' + cart.userID,
+          'https://sahilshop-backend.onrender.com/api/carts/update/' + cart.userID,
           {
             Products: updatedProducts,
             total: updatedTotal,
